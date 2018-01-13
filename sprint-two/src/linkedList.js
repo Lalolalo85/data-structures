@@ -20,14 +20,23 @@ var LinkedList = function() {
   };
 
   list.removeHead = function() {
-    for(let newNode in list){
+    var store = list.head;
+    list.head = list.head.next;
+     return store.value
 
+  };
+
+  list.contains = function(target){
+var moreNodes = list.head;
+    while(moreNodes){
+    if(target === moreNodes.value){
+      return true;
+    }else{
+      moreNodes = moreNodes.next;
     }
-  };
-
-  list.contains = function(target) {
-  };
-
+    }
+      return false;
+};
   return list;
 };
 
